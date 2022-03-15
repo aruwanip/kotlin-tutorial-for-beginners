@@ -2,7 +2,8 @@ fun main() {
 //    println("Hello World")
 //    variables()
 //    numberTypes()
-    strings()
+//    strings()
+    booleanType()
 }
 
 fun variables() {
@@ -97,4 +98,13 @@ fun strings() {
     var age = 32
 
     println("Hello $name, your age is $age and your name is ${name.length} characters long.")
+}
+
+fun booleanType() {
+    var isBlank: Boolean = false
+    println(isBlank)
+    println(isBlank.not())
+
+    isBlank = "Jane".isBlank()
+    println(isBlank)
 }
