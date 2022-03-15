@@ -5,7 +5,9 @@ fun main() {
 //    kotlinString()
 //    booleanType()
 //    conditionals()
-    truthTables()
+//    truthTables()
+    structuralEquality()
+    referentialEquality()
 }
 
 fun variables() {
@@ -148,3 +150,30 @@ fun truthTables() {
         println("Both items are false")
     }
 }
+
+fun structuralEquality() {
+    // Structural equality
+    // == equality
+    // != inequality
+    var name1 = "Jane"
+    var name2 = "Donn"
+    println(name1 == name2) // Same as and preferred over name1.equals(name2)
+    name2 = "Jane"
+    println(name1 == name2)
+}
+
+fun referentialEquality() {
+    // Referential equality
+    // Numbers, chars, boolean are represented as primitives in runtime so === is same as == for these types
+    // === equality
+    // !== inequality
+    var a = 12
+    var b = 12
+    println(a === b)
+
+    var personA = Person("Jane")
+    var personB = Person("Jane")
+    println(personA === personB) // Not sharing the same object
+}
+
+class Person(var name: String)
