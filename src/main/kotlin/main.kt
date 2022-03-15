@@ -210,3 +210,10 @@ fun nullSafeCalls() {
     var length5 = lastName?.substring(0, 2)?.length
     var length6 = lastName?.substring(0, 5)?.drop(2)?.substring(2, 3)?.length
 }
+
+fun elvisOperator() {
+    var lastName: String? = "Doe"
+    var length: Int = if (lastName != null) lastName.length else 0
+    // Elvis operator
+    var length2: Int = lastName?.substring(0, 2)?.length ?: 0
+}
