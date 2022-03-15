@@ -9,7 +9,11 @@ fun main() {
 //    structuralEquality()
 //    referentialEquality()
 //    nullableTypes()
-    nullSafeCalls()
+//    nullSafeCalls()
+//    elvisOperator()
+//    helloWorld()
+    var x = sayHi()
+    println(x)
 }
 
 fun variables() {
@@ -216,4 +220,20 @@ fun elvisOperator() {
     var length: Int = if (lastName != null) lastName.length else 0
     // Elvis operator
     var length2: Int = lastName?.substring(0, 2)?.length ?: 0
+}
+
+fun helloWorld() {
+    println("Hello World")
+    println("Hello there")
+    moo()
+}
+
+fun moo() {
+    println("Moo!")
+}
+
+fun sayHi(): String {
+    // Default return type is Unit
+//    println("Hello World")
+    return "Hello World"
 }
