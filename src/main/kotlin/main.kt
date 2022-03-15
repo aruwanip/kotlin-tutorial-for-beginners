@@ -4,7 +4,8 @@ fun main() {
 //    numberTypes()
 //    kotlinString()
 //    booleanType()
-    conditionals()
+//    conditionals()
+    truthTables()
 }
 
 fun variables() {
@@ -130,4 +131,20 @@ fun conditionals() {
         println("Hello there") // This will always print
     if (age > 5) println("The age is greater than 5") // Single-liner is preferred if no curly braces
     if (age > 10) println("The age is greater than 10") else println("The age is less than or equal to 10")
+}
+
+fun truthTables() {
+    val myAge = 32
+    val yourAge = 32
+
+    val myName = "Jane"
+    val yourName = "Donn"
+
+    if ((myAge != yourAge) && (myName != yourName)) {
+        println("Both items are true")
+    } else if ((myAge != yourAge) || (myName != yourName)) {
+        println("At least one item is true")
+    } else {
+        println("Both items are false")
+    }
 }
