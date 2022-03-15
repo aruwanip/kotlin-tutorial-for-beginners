@@ -2,8 +2,9 @@ fun main() {
 //    println("Hello World")
 //    variables()
 //    numberTypes()
-//    strings()
-    booleanType()
+//    kotlinString()
+//    booleanType()
+    conditionals()
 }
 
 fun variables() {
@@ -55,7 +56,7 @@ fun numberTypes() {
     println(myInt.minus(12))
 }
 
-fun strings() {
+fun kotlinString() {
     var fullName: String = "Jane Doe"
     println(fullName.length)
     println(fullName.lowercase())
@@ -107,4 +108,26 @@ fun booleanType() {
 
     isBlank = "Jane".isBlank()
     println(isBlank)
+}
+
+fun conditionals() {
+    var calories = 800
+    if (calories >= 2000) {
+        println("You've consumed all your calories for the day.")
+    } else if (calories > 1500) {
+        println("You have a few more calories to eat!")
+    } else if (calories > 1200) {
+        println("You have some room for snacks!")
+    } else if (calories > 1000) {
+        println("You have plenty of calories left!")
+    } else {
+        println("You still have some calories left!")
+    }
+
+    val age = 9
+    if (age > 10)
+        println("The age is greater than 10") // Curly braces not required for one statement
+        println("Hello there") // This will always print
+    if (age > 5) println("The age is greater than 5") // Single-liner is preferred if no curly braces
+    if (age > 10) println("The age is greater than 10") else println("The age is less than or equal to 10")
 }
