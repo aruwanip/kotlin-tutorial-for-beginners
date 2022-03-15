@@ -1,15 +1,16 @@
 fun main() {
 //    println("Hello World")
 //    variables()
-    numberTypes()
+//    numberTypes()
+    strings()
 }
 
 fun variables() {
     // Use "var" keyword to create mutable variables
-    var fullName = "Donn Felker"
+    var fullName = "Jane Doe"
     println(fullName)
 
-    fullName = "John Felker"
+    fullName = "Jane Doe"
     println(fullName)
 
     fullName = ""
@@ -22,11 +23,11 @@ fun variables() {
     println(age)
 
     // Use "val" keyword to create immutable / readonly variables
-    val name = "Donn Felker"
+    val name = "Jane Doe"
     println(name)
 
     // Providing type on variable
-    val firstName: String = "Donn"
+    val firstName: String = "Jane"
     println(name::class)
 
     var currentAge: Int = 32
@@ -51,4 +52,49 @@ fun numberTypes() {
 
     println(myInt.plus(12))
     println(myInt.minus(12))
+}
+
+fun strings() {
+    var fullName: String = "Jane Doe"
+    println(fullName.length)
+    println(fullName.lowercase())
+
+    // Single quote: Char
+    // Double quote: String
+    val c: Char = 'x' // 16-bit Unicode character
+
+    var foo: String = "y"
+
+    // Multi-line string
+    var message: String = "Hello,\nMy name is Jane Doe.\nHow are you?"
+    println(message)
+    message = """
+        Hello,
+        My name is Jane Doe.
+        How are you?
+    """.trimIndent()
+    println(message)
+    message = """
+        Hello,
+        My name is Jane Doe.
+        How are you?
+    """
+    println(message)
+    message = """
+        Hello,
+        My name is Jane Doe.
+        How are you?
+    """.replaceIndent("abc-|-")
+    println(message)
+    message = """
+        >>>Hello,
+        >>>My name is Jane Doe.
+        >>>How are you?
+    """.trimMargin(">>>")
+    println(message)
+
+    var name = "Jane"
+    var age = 32
+
+    println("Hello $name, your age is $age and your name is ${name.length} characters long.")
 }
