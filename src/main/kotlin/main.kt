@@ -6,8 +6,9 @@ fun main() {
 //    booleanType()
 //    conditionals()
 //    truthTables()
-    structuralEquality()
-    referentialEquality()
+//    structuralEquality()
+//    referentialEquality()
+    nullableTypes()
 }
 
 fun variables() {
@@ -177,3 +178,15 @@ fun referentialEquality() {
 }
 
 class Person(var name: String)
+
+fun nullableTypes() {
+    var name: String = "Jane" // Non-nullable
+    var name2: String? = "Jane" // Nullable
+    name2 = null
+    var age: Int = 32
+    var age2: Int? = 32
+    age2 = null
+    var person = Person("Foo")
+    var person2: Person? = Person("Foo")
+    person2 = null
+}
