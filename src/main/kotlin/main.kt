@@ -13,7 +13,8 @@ fun main() {
 //    elvisOperator()
 //    helloWorld()
 //    kotlinFunctions()
-    nestedFunctions()
+//    nestedFunctions()
+    singleLineFunction()
 }
 
 fun variables() {
@@ -250,3 +251,5 @@ fun nestedFunctions() {
     }
     sayBye()
 }
+
+fun singleLineFunction() = println("Hi")
