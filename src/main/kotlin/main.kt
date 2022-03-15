@@ -15,7 +15,8 @@ fun main() {
 //    kotlinFunctions()
 //    nestedFunctions()
 //    singleLineFunction()
-    functionArguments(32, "Jane", true)
+//    functionArguments(32, "Jane", true)
+    namedParameters()
 }
 
 fun variables() {
@@ -262,4 +263,10 @@ fun functionArguments(age: Int, name: String, isHappy: Boolean) {
         println("$name, far too old at the ripe age of $age.")
     }
     println("You are happy? $isHappy")
+}
+
+fun namedParameters() {
+    functionArguments(age = 32, name = "Jane", isHappy = true)
+    // When using named parameters, must do so for all the arguments (cannot mix named and positional)
+    // Named parameters do not have to be in the same order as function argument signature
 }
