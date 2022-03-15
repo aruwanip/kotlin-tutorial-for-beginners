@@ -12,8 +12,8 @@ fun main() {
 //    nullSafeCalls()
 //    elvisOperator()
 //    helloWorld()
-    var x = sayHi()
-    println(x)
+//    kotlinFunctions()
+    nestedFunctions()
 }
 
 fun variables() {
@@ -232,8 +232,21 @@ fun moo() {
     println("Moo!")
 }
 
+fun kotlinFunctions() {
+    var x = sayHi()
+    println(x)
+}
+
 fun sayHi(): String {
     // Default return type is Unit
 //    println("Hello World")
     return "Hello World"
+}
+
+fun nestedFunctions() {
+    println("Hi")
+    fun sayBye() {
+        println("Bye")
+    }
+    sayBye()
 }
