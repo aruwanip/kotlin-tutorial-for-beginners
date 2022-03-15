@@ -8,7 +8,8 @@ fun main() {
 //    truthTables()
 //    structuralEquality()
 //    referentialEquality()
-    nullableTypes()
+//    nullableTypes()
+    nullSafeCalls()
 }
 
 fun variables() {
@@ -189,4 +190,23 @@ fun nullableTypes() {
     var person = Person("Foo")
     var person2: Person? = Person("Foo")
     person2 = null
+}
+
+fun nullSafeCalls() {
+    var firstName: String = "Jane"
+    val length = firstName.length
+    var lastName: String? = "Doe"
+    var length2 = lastName?.length // Safe call because lastName is nullable, returns null or number
+
+    // Equivalent of safe call
+    var length3 = if (lastName != null) lastName.length else 0
+
+    // Chaining
+    // Instead of below in Java
+    if (lastName != null && lastName.length > 1) {
+        val length4 = lastName.length
+    }
+    // Can use chaining in Kotlin
+    var length5 = lastName?.substring(0, 2)?.length
+    var length6 = lastName?.substring(0, 5)?.drop(2)?.substring(2, 3)?.length
 }
