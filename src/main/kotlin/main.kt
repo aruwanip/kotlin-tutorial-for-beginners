@@ -14,7 +14,8 @@ fun main() {
 //    helloWorld()
 //    kotlinFunctions()
 //    nestedFunctions()
-    singleLineFunction()
+//    singleLineFunction()
+    functionArguments(32, "Jane", true)
 }
 
 fun variables() {
@@ -253,3 +254,12 @@ fun nestedFunctions() {
 }
 
 fun singleLineFunction() = println("Hi")
+
+fun functionArguments(age: Int, name: String, isHappy: Boolean) {
+    if (age < 21) {
+        println("$name, you are not old enough, you are $age.")
+    } else {
+        println("$name, far too old at the ripe age of $age.")
+    }
+    println("You are happy? $isHappy")
+}
