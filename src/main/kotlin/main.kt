@@ -16,7 +16,8 @@ fun main() {
 //    nestedFunctions()
 //    singleLineFunction()
 //    functionArguments(32, "Jane", true)
-    namedParameters()
+//    namedParameters()
+    defaultFunctionArguments()
 }
 
 fun variables() {
@@ -269,4 +270,16 @@ fun namedParameters() {
     functionArguments(age = 32, name = "Jane", isHappy = true)
     // When using named parameters, must do so for all the arguments (cannot mix named and positional)
     // Named parameters do not have to be in the same order as function argument signature
+}
+
+fun printUserInfo(firstName: String, lastName: String, age: Int, isSunburned: Boolean = false,
+                  likesMovies: Boolean = true, lovesPopcorn: Boolean = true) {
+    // Conventionally default values are defined at the end of the parameter list
+    println("$firstName $lastName is of age $age, Sunburned: $isSunburned, Likes Movies: $likesMovies, Loves Popcorn: $lovesPopcorn")
+}
+
+fun defaultFunctionArguments() {
+    printUserInfo(firstName = "Jane", lastName = "Doe", age = 32)
+    printUserInfo(firstName = "Bob", lastName = "Doe", age = 37)
+    printUserInfo(firstName = "Sarah", lastName = "Doe", age = 12, likesMovies = false)
 }
