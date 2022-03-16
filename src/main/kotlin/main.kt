@@ -18,7 +18,8 @@ fun main() {
 //    functionArguments(32, "Jane", true)
 //    namedParameters()
 //    defaultFunctionArguments()
-    variableArgs()
+//    variableArgs()
+    overloadingFunctions()
 }
 
 fun variables() {
@@ -286,7 +287,7 @@ fun defaultFunctionArguments() {
 }
 
 fun printBookInfo(title: String, vararg authors: String) {
-    // Variable argument should be last one in list
+    // Variable arguments should be last one in list
     println("$title = Authors:")
     authors.forEach { println(it) }
 }
@@ -294,4 +295,22 @@ fun printBookInfo(title: String, vararg authors: String) {
 fun variableArgs() {
     printBookInfo("Green Eggs and Ham", "Dr. Seuss", "Jane Doe")
     printBookInfo("Green Eggs and Ham")
+}
+
+fun printUserInfo(name: String) {
+    println("Name: $name")
+}
+
+fun printUserInfo(name: String, age: Int) {
+    println("Name: $name, Age: $age")
+}
+
+fun printUserInfo(name: String, age: Int, favColor: String) {
+    println("Name: $name, Age: $age, Favorite Color: $favColor")
+}
+
+fun overloadingFunctions() {
+    printUserInfo("Jane Doe")
+    printUserInfo("Jane Doe", 32)
+    printUserInfo("Jane Does", 32, "Purple")
 }
