@@ -17,7 +17,8 @@ fun main() {
 //    singleLineFunction()
 //    functionArguments(32, "Jane", true)
 //    namedParameters()
-    defaultFunctionArguments()
+//    defaultFunctionArguments()
+    variableArgs()
 }
 
 fun variables() {
@@ -282,4 +283,15 @@ fun defaultFunctionArguments() {
     printUserInfo(firstName = "Jane", lastName = "Doe", age = 32)
     printUserInfo(firstName = "Bob", lastName = "Doe", age = 37)
     printUserInfo(firstName = "Sarah", lastName = "Doe", age = 12, likesMovies = false)
+}
+
+fun printBookInfo(title: String, vararg authors: String) {
+    // Variable argument should be last one in list
+    println("$title = Authors:")
+    authors.forEach { println(it) }
+}
+
+fun variableArgs() {
+    printBookInfo("Green Eggs and Ham", "Dr. Seuss", "Jane Doe")
+    printBookInfo("Green Eggs and Ham")
 }
