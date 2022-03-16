@@ -19,7 +19,8 @@ fun main() {
 //    namedParameters()
 //    defaultFunctionArguments()
 //    variableArgs()
-    overloadingFunctions()
+//    overloadingFunctions()
+    creatingClasses()
 }
 
 fun variables() {
@@ -314,3 +315,19 @@ fun overloadingFunctions() {
     printUserInfo("Jane Doe", 32)
     printUserInfo("Jane Does", 32, "Purple")
 }
+
+fun creatingClasses() {
+    var user = User()
+    user.firstName = "Jane"
+    user.lastName = "Doe"
+    user.printWithPrefix("Ms.")
+    var friend = User()
+    friend.firstName = "John"
+    friend.lastName = "Smith"
+    friend.printFullName()
+    friend.updateName("Bob")
+    friend.printFullName()
+    friend.firstNameLength()
+}
+
+
