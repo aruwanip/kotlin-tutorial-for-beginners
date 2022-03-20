@@ -430,7 +430,8 @@ fun nestedClasses() {
     vehicle.brand = "Fiat"
     vehicle.info()
 
-    val sw = Vehicle.SteeringWheel()
+//    val sw = Vehicle.SteeringWheel() // Can only instantiate in this manner with non-inner classes
+    val sw = vehicle.SteeringWheel() // Can only call inner class constructors on instantiated outer class
     sw.info()
 
     val transmission = Vehicle.Transmission()
@@ -442,9 +443,10 @@ class Vehicle {
 
     fun info() = println(brand)
 
-    class SteeringWheel {
-        var name = "The Steering Wheel"
-        fun info() = println(name)
+    // Nested classes do not have access to outer class member variables, must specify nested class as inner to do so
+    inner class SteeringWheel {
+        var name = "leather"
+        fun info() = println("$brand is the brand of vehicle with a $name steering wheel")
     }
 
     class Transmission {
