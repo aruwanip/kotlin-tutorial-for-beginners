@@ -29,7 +29,8 @@ fun main() {
 //    creatingSingletons()
 //    declaringConstants()
 //    lateInitModifier()
-    nestedClasses()
+//    nestedClasses()
+    enums()
 }
 
 fun variables() {
@@ -420,9 +421,9 @@ fun declaringConstants() {
 }
 
 fun lateInitModifier() {
-    val user = User("Foo", "Bar")
-    user.favoriteCity = "New York"
-    println(user.toString())
+//    val user = User("Foo", "Bar")
+//    user.favoriteCity = "New York"
+//    println(user.toString())
 }
 
 fun nestedClasses() {
@@ -453,4 +454,20 @@ class Vehicle {
         var type = "Automatic"
         fun shift() = println("The vehicle has shifted")
     }
+}
+
+fun enums() {
+    println(AccountType.GOLD)
+    val accountTYpeFromApi = "gold"
+    val accountType = AccountType.valueOf(accountTYpeFromApi.uppercase())
+    println(accountType == AccountType.GOLD)
+
+    val user = User("Jane", "Doe", AccountType.PLATINUM)
+}
+
+enum class AccountType {
+    BRONZE,
+    SILVER,
+    GOLD,
+    PLATINUM
 }

@@ -1,11 +1,9 @@
-class User(var firstName: String, var lastName: String) {
-
-    lateinit var favoriteCity: String
+class User(var firstName: String, var lastName: String, var accountType: AccountType = AccountType.BRONZE) {
 
     fun fullName(): String = "$firstName - $lastName"
 
     override fun toString(): String {
-        return fullName() + "'s Favorite City is: $favoriteCity"
+        return fullName()
     }
 
 }
