@@ -1,6 +1,4 @@
-class User {
-    var firstName: String = ""
-    var lastName: String = ""
+class User(var firstName: String = "", var lastName: String = "Smith") {
 
     fun printFullName() {
         println("$firstName $lastName")
