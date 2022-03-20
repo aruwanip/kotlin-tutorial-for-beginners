@@ -463,11 +463,20 @@ fun enums() {
     println(accountType == AccountType.GOLD)
 
     val user = User("Jane", "Doe", AccountType.PLATINUM)
+
+    println(AccountType.GOLD)
+    println(AccountType.GOLD.discountPercent)
+    println(AccountType.GOLD.numberOfSubscriptions)
+
+    val value = AccountType.valueOf("Platinum".uppercase())
+    println(value)
+    println(value.discountPercent)
+    println(value.numberOfSubscriptions)
 }
 
-enum class AccountType {
-    BRONZE,
-    SILVER,
-    GOLD,
-    PLATINUM
+enum class AccountType(val discountPercent: Int, val numberOfSubscriptions: Int) {
+    BRONZE(10, 1),
+    SILVER(15, 5),
+    GOLD(20, 10),
+    PLATINUM(25, 15)
 }
