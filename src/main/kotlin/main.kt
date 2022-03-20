@@ -22,7 +22,8 @@ fun main() {
 //    overloadingFunctions()
 //    creatingClasses()
 //    constructorInitBlocks()
-    classProperties()
+//    classProperties()
+    multiplePropertiesInClass()
 }
 
 fun variables() {
@@ -319,15 +320,15 @@ fun overloadingFunctions() {
 }
 
 fun creatingClasses() {
-    var user = User(firstName = "Jane", lastName = "Doe", isPlatinum = true)
+//    var user = User(firstName = "Jane", lastName = "Doe", isPlatinum = true)
 //    user.printWithPrefix("Ms.")
-    var friend = User(firstName = "John", lastName = "Smith")
+//    var friend = User(firstName = "John", lastName = "Smith")
 //    friend.printFullName()
 //    friend.updateName("Bob")
 //    friend.printFullName()
 //    friend.firstNameLength()
 
-    var cousin = User("Nick")
+//    var cousin = User("Nick")
 }
 
 fun constructorInitBlocks() {
@@ -335,12 +336,19 @@ fun constructorInitBlocks() {
 }
 
 fun classProperties() {
+//    val user = User("Jane", "Doe")
+//    println(user.fullName)
+//    // Because class property is var and in same package, it is mutable
+//    user.fullName = "Hello World"
+//    println(user.fullName)
+//    println(user.fullNameLength)
+//    user.fullName = "John Smith"
+//    println(user.fullName)
+}
+
+fun multiplePropertiesInClass() {
     val user = User("Jane", "Doe")
-    println(user.fullName)
-    // Because class property is var and in same package, it is mutable
-    user.fullName = "Hello World"
-    println(user.fullName)
-    println(user.fullNameLength)
-    user.fullName = "John Smith"
-    println(user.fullName)
+    user.age = 30
+    user.favoriteColor = "Green"
+    user.sayHi()
 }
