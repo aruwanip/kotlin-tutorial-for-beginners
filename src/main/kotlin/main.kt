@@ -317,11 +317,13 @@ fun overloadingFunctions() {
 }
 
 fun creatingClasses() {
-    var user = User(firstName = "Jane", lastName = "Doe")
-    user.printWithPrefix("Ms.")
-    var friend = User(firstName = "John")
-    friend.printFullName()
-    friend.updateName("Bob")
-    friend.printFullName()
-    friend.firstNameLength()
+    var user = User(firstName = "Jane", lastName = "Doe", isPlatinum = true)
+//    user.printWithPrefix("Ms.")
+    var friend = User(firstName = "John", lastName = "Smith")
+//    friend.printFullName()
+//    friend.updateName("Bob")
+//    friend.printFullName()
+//    friend.firstNameLength()
+
+    var cousin = User("Nick")
 }
