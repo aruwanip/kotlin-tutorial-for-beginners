@@ -25,7 +25,8 @@ fun main() {
 //    classProperties()
 //    multiplePropertiesInClass()
 //    classFunctions()
-    companionObject()
+//    companionObject()
+    creatingSingletons()
 }
 
 fun variables() {
@@ -373,4 +374,33 @@ fun companionObject() {
 
     val users2 = User.users
     users2.forEach { println(it) }
+}
+
+fun creatingSingletons() {
+    // 1 instance
+    println(FavoriteFood.name)
+    FavoriteFood.name = "Watermelon"
+    println(FavoriteFood.name)
+    FavoriteFood.ingredients.add("Salt")
+    println(FavoriteFood.ingredients.first())
+    doStuff()
+    println(FavoriteFood.name)
+    println(FavoriteFood.ingredients.firstOrNull())
+    println(FavoriteFood.numberOfIngredients())
+    println(FavoriteFood == FavoriteFood)
+}
+
+fun doStuff() {
+    FavoriteFood.name = "Chicken"
+    FavoriteFood.ingredients.clear()
+}
+
+// Use object instead of class keyword to make it a singleton
+object FavoriteFood {
+    var name = "Unknown"
+    val ingredients = mutableListOf<String>()
+
+    fun numberOfIngredients(): Int {
+        return ingredients.size
+    }
 }
