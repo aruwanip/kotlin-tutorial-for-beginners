@@ -23,7 +23,8 @@ fun main() {
 //    creatingClasses()
 //    constructorInitBlocks()
 //    classProperties()
-    multiplePropertiesInClass()
+//    multiplePropertiesInClass()
+    classFunctions()
 }
 
 fun variables() {
@@ -347,8 +348,16 @@ fun classProperties() {
 }
 
 fun multiplePropertiesInClass() {
+//    val user = User("Jane", "Doe")
+//    user.age = 30
+//    user.favoriteColor = "Green"
+//    user.sayHi()
+}
+
+fun classFunctions() {
     val user = User("Jane", "Doe")
-    user.age = 30
-    user.favoriteColor = "Green"
-    user.sayHi()
+    println(user.fullName())
+    println(user.fullNameLength())
+    user.updateFullNameWithSuffix("Ms.")
+    println(user.fullName())
 }

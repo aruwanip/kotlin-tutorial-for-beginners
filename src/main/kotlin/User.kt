@@ -1,14 +1,13 @@
 class User(var firstName: String, var lastName: String) {
 
-    var age: Int = 0
-    var favoriteColor: String = "Blue"
+    fun fullName(): String = "$firstName $lastName"
 
-    fun fullName(): String = "$firstName - $lastName"
+    fun fullNameLength(): Int {
+        return fullName().length
+    }
 
-    fun sayHi() = println("Hi ${fullName()}")
-
-    override fun toString(): String {
-        return fullName()
+    fun updateFullNameWithSuffix(suffix: String) {
+        firstName = "$suffix $firstName"
     }
 
 }
