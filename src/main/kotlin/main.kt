@@ -21,7 +21,8 @@ fun main() {
 //    variableArgs()
 //    overloadingFunctions()
 //    creatingClasses()
-    constructorInitBlocks()
+//    constructorInitBlocks()
+    classProperties()
 }
 
 fun variables() {
@@ -314,7 +315,7 @@ fun printUserInfo(name: String, age: Int, favColor: String) {
 fun overloadingFunctions() {
     printUserInfo("Jane Doe")
     printUserInfo("Jane Doe", 32)
-    printUserInfo("Jane Does", 32, "Purple")
+    printUserInfo("Jane Doe", 32, "Purple")
 }
 
 fun creatingClasses() {
@@ -331,4 +332,15 @@ fun creatingClasses() {
 
 fun constructorInitBlocks() {
     val user = User("Jane", "Doe")
+}
+
+fun classProperties() {
+    val user = User("Jane", "Doe")
+    println(user.fullName)
+    // Because class property is var and in same package, it is mutable
+    user.fullName = "Hello World"
+    println(user.fullName)
+    println(user.fullNameLength)
+    user.fullName = "John Smith"
+    println(user.fullName)
 }

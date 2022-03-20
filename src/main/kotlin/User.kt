@@ -1,13 +1,24 @@
 class User(var firstName: String, var lastName: String, var isPlatinum: Boolean) {
 
-    init {
-        // Called after PRIMARY constructor and before secondary constructors
-        println("Hello 1")
-    }
+    var fullName = "$firstName $lastName"
+        get() = "Full Name: $field"
+        set(value) {
+            if (value.startsWith("J")) {
+                field = "James Bond"
+            } else {
+                // If else is not provided then fullName will not be updated and previous value will remain
+                field = value
+            }
+        }
+
+    val fullNameLength = fullName.length
 
     init {
-        // Can have multiple initializer blocks and will run in order
-        println("Hello 2")
+        // Called after PRIMARY constructor and before secondary constructors
+        println("In Init block")
+        // fullName must have been initialized for below to compile - make sure fullName property is declared before
+        // init block
+        println("This class is for user $fullName")
     }
 
     constructor(firstName: String, lastName: String): this(firstName, lastName, false) {
