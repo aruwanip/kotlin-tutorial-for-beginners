@@ -24,7 +24,8 @@ fun main() {
 //    constructorInitBlocks()
 //    classProperties()
 //    multiplePropertiesInClass()
-    classFunctions()
+//    classFunctions()
+    companionObject()
 }
 
 fun variables() {
@@ -355,9 +356,21 @@ fun multiplePropertiesInClass() {
 }
 
 fun classFunctions() {
-    val user = User("Jane", "Doe")
-    println(user.fullName())
-    println(user.fullNameLength())
-    user.updateFullNameWithSuffix("Ms.")
-    println(user.fullName())
+//    val user = User("Jane", "Doe")
+//    println(user.fullName())
+//    println(user.fullNameLength())
+//    user.updateFullNameWithSuffix("Ms.")
+//    println(user.fullName())
+}
+
+fun companionObject() {
+    var user = User.createUser("foo", "bar")
+    println(user)
+
+    val users = User.createUsers(5)
+//    println(users)
+//    users.forEach { println(it) }
+
+    val users2 = User.users
+    users2.forEach { println(it) }
 }
