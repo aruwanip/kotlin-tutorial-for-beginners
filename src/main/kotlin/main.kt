@@ -28,7 +28,8 @@ fun main() {
 //    companionObject()
 //    creatingSingletons()
 //    declaringConstants()
-    lateInitModifier()
+//    lateInitModifier()
+    nestedClasses()
 }
 
 fun variables() {
@@ -422,4 +423,32 @@ fun lateInitModifier() {
     val user = User("Foo", "Bar")
     user.favoriteCity = "New York"
     println(user.toString())
+}
+
+fun nestedClasses() {
+    val vehicle = Vehicle()
+    vehicle.brand = "Fiat"
+    vehicle.info()
+
+    val sw = Vehicle.SteeringWheel()
+    sw.info()
+
+    val transmission = Vehicle.Transmission()
+    transmission.shift()
+}
+
+class Vehicle {
+    var brand: String = "Unknown"
+
+    fun info() = println(brand)
+
+    class SteeringWheel {
+        var name = "The Steering Wheel"
+        fun info() = println(name)
+    }
+
+    class Transmission {
+        var type = "Automatic"
+        fun shift() = println("The vehicle has shifted")
+    }
 }
