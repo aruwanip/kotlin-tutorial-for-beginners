@@ -26,7 +26,8 @@ fun main() {
 //    multiplePropertiesInClass()
 //    classFunctions()
 //    companionObject()
-    creatingSingletons()
+//    creatingSingletons()
+    declaringConstants()
 }
 
 fun variables() {
@@ -365,15 +366,15 @@ fun classFunctions() {
 }
 
 fun companionObject() {
-    var user = User.createUser("foo", "bar")
-    println(user)
-
-    val users = User.createUsers(5)
+//    var user = User.createUser("foo", "bar")
+//    println(user)
+//
+//    val users = User.createUsers(5)
 //    println(users)
 //    users.forEach { println(it) }
 
-    val users2 = User.users
-    users2.forEach { println(it) }
+//    val users2 = User.users
+//    users2.forEach { println(it) }
 }
 
 fun creatingSingletons() {
@@ -403,4 +404,15 @@ object FavoriteFood {
     fun numberOfIngredients(): Int {
         return ingredients.size
     }
+}
+
+const val MAX_AGE = 18
+
+fun declaringConstants() {
+    val user = User("Foo", "Bar")
+//    user.MAX_AGE // inaccessible because private
+    println(User.MIN_AGE)
+    println(Constants.MAX_AGE)
+    println(Constants.MIN_AGE)
+    println(MAX_AGE)
 }
