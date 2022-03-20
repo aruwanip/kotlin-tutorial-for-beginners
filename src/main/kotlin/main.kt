@@ -27,7 +27,8 @@ fun main() {
 //    classFunctions()
 //    companionObject()
 //    creatingSingletons()
-    declaringConstants()
+//    declaringConstants()
+    lateInitModifier()
 }
 
 fun variables() {
@@ -409,10 +410,16 @@ object FavoriteFood {
 const val MAX_AGE = 18
 
 fun declaringConstants() {
+//    val user = User("Foo", "Bar")
+////    user.MAX_AGE // inaccessible because private
+//    println(User.MIN_AGE)
+//    println(Constants.MAX_AGE)
+//    println(Constants.MIN_AGE)
+//    println(MAX_AGE)
+}
+
+fun lateInitModifier() {
     val user = User("Foo", "Bar")
-//    user.MAX_AGE // inaccessible because private
-    println(User.MIN_AGE)
-    println(Constants.MAX_AGE)
-    println(Constants.MIN_AGE)
-    println(MAX_AGE)
+    user.favoriteCity = "New York"
+    println(user.toString())
 }
