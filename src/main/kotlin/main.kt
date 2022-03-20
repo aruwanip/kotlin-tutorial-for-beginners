@@ -20,7 +20,8 @@ fun main() {
 //    defaultFunctionArguments()
 //    variableArgs()
 //    overloadingFunctions()
-    creatingClasses()
+//    creatingClasses()
+    constructorInitBlocks()
 }
 
 fun variables() {
@@ -326,4 +327,8 @@ fun creatingClasses() {
 //    friend.firstNameLength()
 
     var cousin = User("Nick")
+}
+
+fun constructorInitBlocks() {
+    val user = User("Jane", "Doe")
 }
