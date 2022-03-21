@@ -472,24 +472,18 @@ fun enums() {
 //    println(value)
 //    println(value.discountPercent)
 //    println(value.numberOfSubscriptions)
-    val fromApi = "BroNZe"
-    val accountType = AccountType.valueOf(fromApi.uppercase())
-    println(accountType.calculateDiscountPercent())
+//    val fromApi = "BroNZe"
+//    val accountType = AccountType.valueOf(fromApi.uppercase())
+//    println(accountType.calculateDiscountPercent())
+    for(accountType in AccountType.values()){
+        println(accountType)
+    }
+    AccountType.values().forEach { println(it) }
 }
 
 enum class AccountType() {
-    BRONZE {
-        override fun calculateDiscountPercent() = 5
-    },
-    SILVER {
-        override fun calculateDiscountPercent() = 10
-    },
-    GOLD {
-        override fun calculateDiscountPercent() = 15
-    },
-    PLATINUM {
-        override fun calculateDiscountPercent() = 20
-    };
-
-    abstract fun calculateDiscountPercent(): Int
+    BRONZE,
+    SILVER,
+    GOLD,
+    PLATINUM
 }
