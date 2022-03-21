@@ -1,3 +1,5 @@
+import kotlin.test.assertContains
+
 fun main() {
 //    println("Hello World")
 //    variables()
@@ -475,15 +477,22 @@ fun enums() {
 //    val fromApi = "BroNZe"
 //    val accountType = AccountType.valueOf(fromApi.uppercase())
 //    println(accountType.calculateDiscountPercent())
-    for(accountType in AccountType.values()){
-        println(accountType)
-    }
-    AccountType.values().forEach { println(it) }
+//    for(accountType in AccountType.values()){
+//        println(accountType)
+//    }
+//    AccountType.values().forEach { println(it) }
+
+    val accountType = AccountType.getAccountTypeByName("gold")
+    println(accountType)
 }
 
 enum class AccountType() {
     BRONZE,
     SILVER,
     GOLD,
-    PLATINUM
+    PLATINUM;
+
+    companion object {
+        fun getAccountTypeByName(name: String) = valueOf(name.uppercase())
+    }
 }
